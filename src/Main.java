@@ -10,15 +10,16 @@ class Main
     {
         Scanner input = new Scanner(System.in);
 
-        Aluno aluno = new Aluno();
         double nota;
         double trimestre_1;
         double falta;
-
+        
         System.out.println("Digite o nome do aluno");
-        aluno.name = input.nextLine();
+        String name = input.nextLine();
         System.out.println("Digite a primeira nota do aluno do trimestre 1");
         nota = input.nextDouble();
+
+        Aluno aluno = new Aluno(name);
         // preciso colocar um loop no teste do numero negativo
         if(nota <0)
         {

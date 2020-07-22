@@ -10,6 +10,11 @@ public class Aluno
     public double trimestre_2;
     public double trimestre_3;
 
+    public Aluno(String name)
+    {
+        this.name = name;
+    }
+
     public double somaTrimestre_1(double nota)
     {
         trimestre_1 = trimestre_1 + nota;
