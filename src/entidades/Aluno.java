@@ -5,22 +5,31 @@ package entidades;
  */
 public class Aluno 
 {
-    public String name;
-    public double trimestre_1;
-    public double trimestre_2;
-    public double trimestre_3;
+    private String name;
+    private double trimestre_1;
+    private double trimestre_2;
 
     public Aluno(String name)
     {
         this.name = name;
     }
 
+    public void setName(String name) // mudar a variavel
+    {
+        this.name = name;
+    }
+
+    public String getName()  // returnar o valor da variavel
+    {
+        return name;
+    }
+
     public double somaTrimestre_1(double nota)
     {
         trimestre_1 = trimestre_1 + nota;
-        if(trimestre_1 > 30)
+        if(trimestre_1 > 10)
         {
-            trimestre_1 = 30;
+            trimestre_1 = 10;
             return trimestre_1 ;
         }
         else
@@ -31,9 +40,9 @@ public class Aluno
     public double somaTrimestre_2(double nota)
     {
         trimestre_2 = trimestre_2 + nota;
-        if(trimestre_2 > 35)
+        if(trimestre_2 > 10)
         {
-            trimestre_2 = 35;
+            trimestre_2 = 10;
             return trimestre_2;
         }
         else
@@ -41,21 +50,9 @@ public class Aluno
             return trimestre_2;
         }
     }
-    public double somaTrimestre_3(double nota)
-    {
-        trimestre_3 = trimestre_3 + nota;
-        if(trimestre_3 > 35)
-        {
-            trimestre_3 = 35;
-            return trimestre_3;
-        }
-        else
-        {
-            return trimestre_3;
-        }
-    }
+
     public double finalNota()
     {
-        return trimestre_1 + trimestre_2 + trimestre_3;
+        return (trimestre_1 + trimestre_2) / 2;
     }
 }
